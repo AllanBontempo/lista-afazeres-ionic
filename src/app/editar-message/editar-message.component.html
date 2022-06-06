@@ -1,0 +1,45 @@
+<div>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Editar {{message.fromName}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="form" [formGroup]="form">
+    <ion-item class="ion-item-changes">
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input  formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item class="ion-item-changes">
+      <ion-label position="stacked">Resumo</ion-label>
+      <ion-input formControlName="subject"></ion-input>
+    </ion-item>
+    <ion-item class="ion-item-changes">
+      <ion-label position="stacked">Descrição</ion-label>
+      <ion-input formControlName="descricao"></ion-input>
+    </ion-item>
+    <ion-item class="ion-item-changes">
+      <ion-label position="stacked">Valor</ion-label>
+      <ion-input type="number" formControlName="valor"></ion-input>
+    </ion-item>
+    <ion-item class="ion-item-changes">
+      <ion-label position="stacked">Ações</ion-label>
+      <ion-textarea formControlName="acoes" placeholder="Informe uma ação por linha">
+      </ion-textarea>
+    </ion-item>
+    <ion-item class="ion-item-changes">
+      <ion-label position="stacked">Referências</ion-label>
+      <ion-textarea formControlName="referencias" placeholder="Informe uma referência por linha">
+      </ion-textarea>
+    </ion-item>
+  </div>
+  <div class="div-button">
+    <ion-button [disabled]="!form.valid" routerLink="/" (click)="editar()" class="button-add" color="light">Adicionar</ion-button>
+  </div>
+</div>
+
+
+
+
+

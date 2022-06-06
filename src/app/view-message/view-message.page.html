@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="message">
+  <ion-item>
+    <ion-icon name="person-circle" color="primary"></ion-icon>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ message.fromName }}
+        <span class="date">
+          <ion-note>{{ message.date }}</ion-note>
+        </span>
+      </h2>
+      <h3>To: <ion-note>Me</ion-note></h3>
+    </ion-label>
+  </ion-item>
+
+  <div class="ion-padding">
+    <h1>{{ message.subject }}</h1>
+    <div>
+      <p>
+        {{message.descricao}}
+      </p>
+    </div>
+    <div>
+      <p>Valor: R$ {{message.valor}}</p>
+    </div>
+    <div>
+      <p>Ações:</p>
+      <ul>
+        <div *ngFor="let acao of message.acoes">
+          <li>{{acao}}</li>
+        </div>
+      </ul>
+    </div>
+    <div>
+      <p>Referências:</p>
+      <ul>
+        <div *ngFor="let referencia of message.referencias">
+          <li>{{referencia}}</li>
+        </div>
+      </ul>
+    </div>
+    <div class="div-button">
+      <ion-button [routerLink]="'/editar/message/' + message.id" class="button-add" color="light">Editar</ion-button>
+    </div>
+  </div>
+</ion-content>

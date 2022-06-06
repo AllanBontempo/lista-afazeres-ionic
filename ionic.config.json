@@ -1,0 +1,7 @@
+{
+  "name": "lista-afazeres",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
